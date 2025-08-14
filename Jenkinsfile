@@ -69,10 +69,10 @@ pipeline {
         sshagent(credentials: ['remote-server-ssh']) {
           sh """
             ssh -o StrictHostKeyChecking=no ubuntu@43.205.229.36 \\
-              'docker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} && \\
-               docker stop ${IMAGE_NAME} 2>/dev/null || true && \\
-               docker rm   ${IMAGE_NAME} 2>/dev/null || true && \\
-               docker run -d --name ${IMAGE_NAME} --restart unless-stopped -p 80:80 \\
+              'sudo docker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} && \\
+               sudo docker stop ${IMAGE_NAME} 2>/dev/null || true && \\
+               sudo docker rm   ${IMAGE_NAME} 2>/dev/null || true && \\
+               sudo docker run -d --name ${IMAGE_NAME} --restart unless-stopped -p 80:80 \\
                  ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}'
           """
         }
