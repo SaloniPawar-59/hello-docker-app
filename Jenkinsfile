@@ -13,10 +13,10 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '20'))
   }
 
-  triggers {
+  //triggers {
     // If your Jenkins is publicly reachable and webhook added, you can use GitHub hook trigger instead.
     // pollSCM('H/2 * * * *') // Fallback: poll every ~2 minutes
-  }
+  //}
 
   stages {
     stage('Checkout') {
