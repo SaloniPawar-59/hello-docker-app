@@ -1,3 +1,3 @@
-# Simple Nginx-based static site
+# Simple Nginx static site
 FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
