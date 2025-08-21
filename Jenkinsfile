@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKERHUB_USER = 'salonicg14'
-    IMAGE_NAME     = 'hello-jenkins'
+    IMAGE_NAME     = 'hello-jenkins-img'
     
   }
 
