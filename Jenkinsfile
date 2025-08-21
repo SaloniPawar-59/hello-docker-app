@@ -68,7 +68,7 @@ pipeline {
       steps {
         sshagent(credentials: ['remote-server-ssh']) {
           sh """
-            ssh -o StrictHostKeyChecking=no ubuntu@43.205.229.36 \\
+            ssh -o StrictHostKeyChecking=no ubuntu@43.205.129.149 \\
               'sudo docker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} && \\
                sudo docker stop ${IMAGE_NAME} 2>/dev/null || true && \\
                sudo docker rm   ${IMAGE_NAME} 2>/dev/null || true && \\
